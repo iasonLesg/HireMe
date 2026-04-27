@@ -1,0 +1,73 @@
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Use rgba to make your #e3e3e3 background 80% opaque */
+  background-color: rgba(227, 227, 227, 0.8); 
+  backdrop-filter: blur(4px); /* Adds a high-end frosted glass effect */
+  z-index: 9999;
+  transition: opacity 1.5s ease-in-out;
+  opacity: 1;
+}
+
+.loading-overlay.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.circles {
+  width: 350px;
+  height: 350px;
+  position: relative;
+}
+
+.circles * {
+  border-radius: 50%;
+  position: absolute;
+  box-sizing: border-box;
+  inset: 0;
+  margin: auto;
+}
+
+/* Big Circles Animation */
+.bigCircles {
+  width: 100%;
+  height: 100%;
+  animation: CirclesMoving 3s linear infinite;
+}
+
+.smallCircles {
+  width: 300px;
+  height: 300px;
+  animation: CirclesMoving 5s linear -1s infinite;
+}
+
+/* Dots logic from your mixin */
+.bigDots:nth-child(2n) .dot:nth-child(2n),
+.bigDots:nth-child(2n-1) .dot:nth-child(2n-1),
+.smallDots:nth-child(2n) .dot:nth-child(2n),
+.smallDots:nth-child(2n-1) .dot:nth-child(2n-1) {
+  background-color: #101010; /* Your --color-1 */
+}
+
+.bigDots:nth-child(2n) .dot:nth-child(2n-1),
+.bigDots:nth-child(2n-1) .dot:nth-child(2n),
+.smallDots:nth-child(2n) .dot:nth-child(2n-1),
+.smallDots:nth-child(2n-1) .dot:nth-child(2n) {
+  border: 1px solid #101010;
+}
+
+@keyframes CirclesMoving {
+  100% { transform: rotate(360deg); }
+}
+
+/* Keyframes for the drifting dots effect */
+@keyframes bgDotsMoving {
+  100% { transform: rotate(350deg) translate(78px); }
+}
+
+@keyframes smDotsMoving {
+  100% { transform: rotate(345deg) translate(48px); }
+}

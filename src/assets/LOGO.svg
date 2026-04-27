@@ -1,0 +1,32 @@
+<svg viewBox="740 210 550 655" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+    <style>
+        .logo-gray { fill: #808080; }
+        .logo-black { fill: #000000; }
+        .logo-white { fill: #ffffff; }
+    </style>
+    
+    <path id="Top_Left_Top" class="logo-gray" d="m834.33 214.63l91.34 57.4-94.61 54.53-91.34-57.4z"/>
+    <path id="Top_Left_Side" class="logo-black" d="m832.93 326.67v115.53l-90.76-60.88-1.53-112.65z"/>
+    <path id="Top_Left_Front" class="logo-white" d="m925.52 271.21l-1.13 121.15-92.78 50.34-0.5-118.36z"/>
+    
+    <path id="Top_Right_Top" class="logo-gray" d="m1015.61 216l91.34 57.4-94.61 54.53-91.34-57.4z"/>
+    <path id="Top_Right_Side" class="logo-black" d="m1015.89 329.66l-0.07 121.8-91.27-58.52-1.62-120.94z"/>
+    <path id="Top_Right_Front" class="logo-white" d="m1105.01 272.92l2.93 119.07-93.26 53.58-1.04-119.88z"/>
+
+    <path id="Mid_Left_Top" class="logo-white" d="m926.61 504l91.34 57.4-94.61 54.53-91.34-57.4z"/>
+    <path id="Mid_Left_Side" class="logo-black" d="m924.93 615.67v115.53l-90.76-60.88-1.53-112.65z"/>
+    <path id="Mid_Left_Front" class="logo-black" d="m1017.79 560.58l-3.02 120.24-90.89 51.24-0.49-117.25z"/>
+
+    <path id="Mid_Center_Top" class="logo-black" d="m1106.61 508l91.34 57.4-94.61 54.53-91.34-57.4z"/>
+    <path id="Mid_Center_Side" class="logo-white" d="m1104.91 620.63l2.2 127.59-90.98-64.78-1.13-122.44z"/>
+    <path id="Mid_Center_Front" class="logo-white" d="m1105.01 391.92l2.93 116.07-93.26 53.58-1.04-119.88z"/>
+
+    <path id="Mid_Right_Top" class="logo-gray" d="m1199.6 564l89.35 56.47-95.8 57.99-93.29-58.46z"/>
+    <path id="Mid_Right_Side" class="logo-white" d="m1195.23 677.59l-0.12 133.63-90.87-65.13-0.87-127.22z"/>
+    <path id="Mid_Right_Front" class="logo-black" d="m1289.92 620.36l-0.88 130.59-95.01 56.69-1.2-129.19z"/>
+
+    <path id="Bot_Left_Side" class="logo-gray" d="m922.98 729.12l0.75 132.47-91.33-67.44 0.6-125.41z"/>
+    <path id="Bot_Center_Front" class="logo-white" d="m1016.12 678.5l1.88 126.5-93.77 57.28-1.23-130.88z"/>
+    <path id="Bot_Center_Side" class="logo-black" d="m1015.94 449.2l1.79 113.39-91.17-58.17-1.56-111.42z"/>
+    <path id="Bot_Left_Front" class="logo-gray" d="m925.22 391.85l2.18 113-94.57 53.91-1.08-119.49z"/>
+</svg>

@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #e3e3e3;
+  --color-c1: #101010;
+  --color-c2: #101010;
+  --color-c3: #d2d2d2;
+  
+  --color-teal-light: #ffffff; 
+  --color-teal-pressed: #ffffff;
+}
+
+@layer components {
+  .nav-link {
+    @apply relative transition-all duration-300 px-1 no-underline inline-block;
+    /* Bottom highlight effect */
+    background-image: linear-gradient(to top, var(--color-teal-light) 120%, transparent 40%);
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    background-position: bottom;
+  }
+
+  .nav-link:hover {
+    @apply not-italic; /* Fixed: This was the error */
+    background-size: 100% 100%;
+    color: var(--color-c1);
+  }
+
+  .nav-link:active {
+    @apply text-white;
+    background-color: var(--color-teal-pressed);
+    background-image: none;
+  }
+}
