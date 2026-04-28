@@ -116,7 +116,7 @@ const NotFound = () => {
         </div>
 
         {/* Back Link */}
-        <Link to="/" className="mt-16 group flex flex-col items-center">
+        <Link to="/Portfolio/" className="mt-16 group flex flex-col items-center">
           <span className="text-[10px] uppercase tracking-[0.4em] text-c2 mb-2 group-hover:text-c1 transition-colors">
             Finished your shift?
           </span>

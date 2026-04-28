@@ -6,7 +6,7 @@ const Thesis = () => {
     <main className="px-6 md:px-8 pt-20 md:pt-32 pb-20 max-w-4xl mx-auto font-sans">
       {/* Navigation */}
       <Link 
-        to="/" 
+        to="/Portfolio/" 
         className="nav-link text-xs uppercase tracking-widest text-c2 mb-12 block w-fit"
       >
         ← Back to Overview

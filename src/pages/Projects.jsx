@@ -129,7 +129,7 @@ export default function Projects() {
       </section>
 
       {/* Footer Navigation */}
-      <Link to="/" className="mt-40 inline-block text-xs uppercase tracking-widest text-c2 hover:text-c1 transition-colors underline underline-offset-8">
+      <Link to="/Portfolio/" className="mt-40 inline-block text-xs uppercase tracking-widest text-c2 hover:text-c1 transition-colors underline underline-offset-8">
         ← Return to Overview
       </Link>
     </main>

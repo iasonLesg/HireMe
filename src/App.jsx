@@ -53,7 +53,7 @@ const PageLayout = ({ children }) => (
 const AppContent = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const location = useLocation();
-  const isHome = location.pathname === "/";
+  const isHome = location.pathname === "/Portfolio";
 
   return (
     <div className="min-h-screen flex flex-col bg-[#e3e3e3] text-c1 font-sans">
@@ -78,7 +78,7 @@ const AppContent = () => {
         >
           <AnimatePresence mode="wait">
             <Routes location={location} key={location.pathname}>
-              <Route path="/" element={<PageLayout><Home /></PageLayout>} />
+              <Route path="/Portfolio" element={<PageLayout><Home /></PageLayout>} />
               <Route path="/cv" element={<PageLayout><Cv /></PageLayout>} />
               <Route path="/projects" element={<PageLayout><Projects /></PageLayout>} />
               <Route path="/Deepex/aidev" element={<PageLayout><AiDev /></PageLayout>} />

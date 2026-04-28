@@ -9,7 +9,7 @@ const Navbar = () => {
       {/* Brand Section */}
       <div className="relative group flex flex-col items-center">
         <Link 
-          to="/" 
+          to="/Portfolio/" 
           className="flex items-center gap-2 md:gap-3 text-sm md:text-xl font-bold tracking-widest uppercase text-c1 hover:opacity-70 transition-opacity"
         >
           {/* Logo scales with screen size */}
