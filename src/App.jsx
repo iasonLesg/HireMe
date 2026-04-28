@@ -23,7 +23,11 @@ import Tetrapipe from './pages/GameDev/Tetrapipe';
 import GameDev from './pages/GameDev';
 import Thesis from './pages/Thesis';
 
+import OpenSource from './pages/OpenSource';
+import MedicalAssistant from './pages/OpenSource/MedicalAssistant';
+
 import InteractiveCubes from "./components/InteractiveCubes";
+import Skills from "./components/Skills"; // 1. Imported the SEO component
 
 // Helper for scrolling
 const ScrollToTop = () => {
@@ -45,6 +49,7 @@ const PageLayout = ({ children }) => (
     {children}
   </motion.div>
 );
+
 const AppContent = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const location = useLocation();
@@ -54,15 +59,17 @@ const AppContent = () => {
     <div className="min-h-screen flex flex-col bg-[#e3e3e3] text-c1 font-sans">
       <NavBar />
       <ScrollToTop />
+      
+      {/* 2. SEO INJECTION POINT: 
+          This renders the categorized lists and tables 
+          in a hidden div for Search Engines like Gemini/Google. 
+      */}
+      
 
       <main 
         className="flex-grow flex flex-col md:flex-row overflow-hidden"
         style={{ height: isHome ? 'calc(100vh - 80px)' : 'auto' }}
       > 
-        {/* 1. CONTENT AREA: 
-            Using min-w-fit on desktop so it expands to the letters.
-            Added h-1/3 on mobile so it doesn't take the whole screen.
-        */}
         <div className={`transition-all duration-1000 ease-in-out z-10
           ${isHome 
             ? 'w-full h-auto md:h-full md:w-auto md:min-w-[33%] flex flex-col justify-center p-8' 
@@ -85,15 +92,13 @@ const AppContent = () => {
               <Route path="/GameDev/Tetrapipe" element={<PageLayout><Tetrapipe /></PageLayout>} />
               <Route path="/GameDev" element={<PageLayout><GameDev /></PageLayout>} />
               <Route path="/Thesis" element={<PageLayout><Thesis /></PageLayout>} />
+              <Route path="/OpenSource" element={<PageLayout><OpenSource /></PageLayout>} />
+              <Route path="/OpenSource/MedicalAssistant" element={<PageLayout><MedicalAssistant /></PageLayout>} />
               <Route path="*" element={<PageLayout><NotFound /></PageLayout>} />
             </Routes>
           </AnimatePresence>
         </div>
 
-        {/* 2. CUBES AREA: 
-            Using flex-grow (flex-1) to ensure it fills the remaining space.
-            Added a min-h on mobile so it's never 0px.
-        */}
         <div 
           className={`relative transition-all duration-1000 ease-in-out bg-[#e3e3e3] flex-1
             ${isHome 
@@ -104,40 +109,38 @@ const AppContent = () => {
           {isHome && (
             <div className="w-full h-full">
               <Canvas 
-  orthographic 
-  // We remove the hardcoded zoom from here and handle it via the state or a fixed resize logic
-  camera={{ position: [0, 0, 1000], near: 0.1, far: 2000 }}
-  gl={{ antialias: true, alpha: true }}
-  // This ensures that when the canvas size changes, the camera stays centered
-  onCreated={({ camera }) => {
-    camera.zoom = 3; 
-    camera.updateProjectionMatrix();
-  }}
->
-  <ambientLight intensity={0.7} /> 
-  <directionalLight position={[150, 150, 150]} intensity={1.2} />
-  
-  <InteractiveCubes onHover={setHoveredIndex} hovered={hoveredIndex} />
-  
-  {/* Adding 'makeDefault' ensures this camera is the one 
-      OrbitControls manipulates and saves state for.
-  */}
-  <OrbitControls 
-    makeDefault 
-    enableZoom={false} 
-    enablePan={false} 
-  />
-</Canvas>
+                orthographic 
+                camera={{ position: [0, 0, 1000], near: 0.1, far: 2000 }}
+                gl={{ antialias: true, alpha: true }}
+                onCreated={({ camera }) => {
+                  camera.zoom = 3; 
+                  camera.updateProjectionMatrix();
+                }}
+              >
+                <ambientLight intensity={0.7} /> 
+                <directionalLight position={[150, 150, 150]} intensity={1.2} />
+                
+                {/* 3. INTERACTIVE CUBES: 
+                    These use the ALL_SKILLS array from skillsData.js 
+                */}
+                <InteractiveCubes onHover={setHoveredIndex} hovered={hoveredIndex} />
+                
+                <OrbitControls 
+                  makeDefault 
+                  enableZoom={false} 
+                  enablePan={false} 
+                />
+              </Canvas>
             </div>
           )}
         </div>
       </main>
-
+<Skills />
       <Footer />
     </div>
   );
 };
-// 4. Main App Component (The Wrapper)
+
 function App() {
   const [contentReady, setContentReady] = useState(false);
   const [removeLoader, setRemoveLoader] = useState(false);

@@ -96,6 +96,38 @@ export default function Projects() {
         </div>
       </section>
 
+   <div className="my-20 border-t border-c3 w-24"></div>
+         {/* --- SECTION: OpenSource --- */}
+      <section>
+        <div className="mb-20">
+          <Link to="/OpenSource" className="group border-b border-c3 pb-6 flex flex-col md:flex-row justify-between items-baseline gap-4">
+            <h2 className="text-4xl md:text-5xl font-bold nav-link leading-tight">
+              Open Source Projects
+            </h2>
+            <span className="text-xs text-c2 uppercase tracking-widest whitespace-nowrap italic">
+              Independent Work
+            </span>
+          </Link>
+        </div>
+
+        <div className="grid gap-12">
+          <p className="text-[10px] uppercase tracking-[0.3em] text-c2 font-bold mb-2">Released Applications</p>
+          
+          {/* Example Game Link - Replace with your actual game path */}
+          <Link to="/OpenSource/MedicalAssistant" className="group border-b border-c3 pb-4 flex justify-between items-end">
+            <span className="text-2xl font-medium nav-link">
+             Medical Assistant
+            </span>
+            <span className="text-xs text-c2 uppercase tracking-widest">
+              Visual Basic | Windows Forms
+            </span>
+          </Link>
+  
+
+       
+        </div>
+      </section>
+
       {/* Footer Navigation */}
       <Link to="/" className="mt-40 inline-block text-xs uppercase tracking-widest text-c2 hover:text-c1 transition-colors underline underline-offset-8">
         ← Return to Overview

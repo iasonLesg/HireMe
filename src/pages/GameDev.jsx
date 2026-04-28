@@ -9,7 +9,7 @@ export default function Projects() {
       <section>
         <div className="mb-20">
           
-            <h2 className="text-4xl md:text-5xl font-bold nav-link leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight">
               Game Development
             </h2>
             <span className="text-xs text-c2 uppercase tracking-widest whitespace-nowrap italic">
